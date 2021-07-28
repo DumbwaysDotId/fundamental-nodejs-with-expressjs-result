@@ -61,7 +61,7 @@ app.delete("/todo/:id", (req, res) => {
 });
 ```
 
-App listen :
+- App listen :
 
 ```javascript
 app.listen(port, () => console.log(`Listening on port ${port}!`));
