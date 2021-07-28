@@ -43,9 +43,9 @@ exports.getUser = async (req, res) => {
 
 exports.addUsers = async (req, res) => {
   try {
-    const { email, password, name, role } = req.body;
+    const { email, password, name, status } = req.body;
 
-    const query = `INSERT INTO users (email,password,name,role) VALUES ('${email}','${password}','${name}','${role}')`;
+    const query = `INSERT INTO users (email,password,name,status) VALUES ('${email}','${password}','${name}','${status}')`;
 
     await db.sequelize.query(query);
 
@@ -67,10 +67,10 @@ exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const { email, password, name, role } = req.body;
+    const { email, password, name, status } = req.body;
 
     const query = `UPDATE users 
-                        SET email = '${email}', password = '${password}', name = '${name}', role = '${role}'
+                        SET email = '${email}', password = '${password}', name = '${name}', status = '${status}'
                         WHERE id = ${id}`;
 
     await db.sequelize.query(query);
