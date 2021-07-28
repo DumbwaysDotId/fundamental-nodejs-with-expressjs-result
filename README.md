@@ -1,1 +1,1 @@
-# Fetching query with sequelize
+# Update query with sequelize
