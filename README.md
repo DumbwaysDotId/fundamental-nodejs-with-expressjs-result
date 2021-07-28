@@ -103,6 +103,7 @@ exports.addTodo = async (req, res) => {
 Update todo :
 
 ```javascript
+...
 exports.updateTodo = async (req, res) => {
   try {
     const { id } = req.params;
@@ -121,11 +122,13 @@ exports.updateTodo = async (req, res) => {
     });
   }
 };
+...
 ```
 
 Delete todo :
 
 ```javascript
+...
 exports.deleteTodo = async (req, res) => {
   try {
     const { id } = req.params;
@@ -144,6 +147,7 @@ exports.deleteTodo = async (req, res) => {
     });
   }
 };
+...
 ```
 
 ---
