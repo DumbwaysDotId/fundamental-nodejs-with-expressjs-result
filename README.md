@@ -1,1 +1,1 @@
-# Insert query with sequelize
+# Fetching query with sequelize
