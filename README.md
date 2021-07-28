@@ -1,0 +1,1 @@
+# Insert query with sequelize
