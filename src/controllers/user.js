@@ -1,46 +1,8 @@
+// Import db connection and QueryTypes from sequelize
 const db = require("../database/connection");
 const { QueryTypes } = require("sequelize");
 
-exports.getUsers = async (req, res) => {
-  try {
-    const query = "SELECT * FROM users";
-    const data = await db.sequelize.query(query, { type: QueryTypes.SELECT });
-
-    res.send({
-      status: "success",
-      data,
-    });
-  } catch (error) {
-    console.log(error);
-    res.send({
-      status: "failed",
-      message: "Server Error",
-    });
-  }
-};
-
-exports.getUser = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    const data = await db.sequelize.query(
-      `SELECT * FROM users WHERE id = ${id}`,
-      { type: QueryTypes.SELECT }
-    );
-
-    res.send({
-      status: "success",
-      data,
-    });
-  } catch (error) {
-    console.log(error);
-    res.send({
-      status: "failed",
-      message: "Server Error",
-    });
-  }
-};
-
+// Function addUsers for insert user data to database
 exports.addUsers = async (req, res) => {
   try {
     const { email, password, name, status } = req.body;
@@ -63,6 +25,49 @@ exports.addUsers = async (req, res) => {
   }
 };
 
+// Function getUsers for get all user data from database
+exports.getUsers = async (req, res) => {
+  try {
+    const query = "SELECT * FROM users";
+    const data = await db.sequelize.query(query, { type: QueryTypes.SELECT });
+
+    res.send({
+      status: "success",
+      data,
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
+
+// Function getUser for get one user data from database
+exports.getUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const data = await db.sequelize.query(
+      `SELECT * FROM users WHERE id = ${id}`,
+      { type: QueryTypes.SELECT }
+    );
+
+    res.send({
+      status: "success",
+      data,
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
+
+// Function updateUser for update user data from database
 exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -89,6 +94,7 @@ exports.updateUser = async (req, res) => {
   }
 };
 
+// Function deleteUser for delete user data from database
 exports.deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
