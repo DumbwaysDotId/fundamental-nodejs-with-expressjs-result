@@ -66,7 +66,7 @@
   Import function getUsers and getUser from user controller :
 
   ```javascript
-  const { getUsers, getUser, addUsers } = require("../controllers/user");
+  const { getUsers, getUser } = require("../controllers/user");
   ```
 
   Router with method get for fetching user data :
