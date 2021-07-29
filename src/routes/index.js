@@ -21,6 +21,7 @@ router.patch("/todo/:id", updateTodo);
 router.delete("/todo/:id", deleteTodo);
 
 router.post("/user", addUsers);
+// Router with method get for insert user data
 router.get("/users", getUsers);
 router.get("/user/:id", getUser);
 
