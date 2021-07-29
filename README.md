@@ -41,7 +41,7 @@
   Import function updateUser from user controller :
 
   ```javascript
-  const { updateUser } = require("../controllers/user");
+  const { ... , updateUser } = require("../controllers/user");
   ```
 
   Router with method get for fetching user data :
