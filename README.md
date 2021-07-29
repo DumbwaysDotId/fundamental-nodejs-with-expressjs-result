@@ -1,6 +1,37 @@
 ## Prepare
 
+Installation :
+
+- Sequelize
+  ```text
+  npm install sequelize
+  ```
+- Migration tools
+  ```text
+  npm install sequelize-cli
+  ```
+- Add MySQL Package
+  ```text
+  npm install mysql2
+  ```
+- Init Sequelize on your project
+  ```text
+  npx sequelize init
+  ```
+
+Database :
+
+- Create database named "course-express"
+- Change the config/config.json file in your project, on development object. Make sure your database config is correct
+- Create model + migration for users table (attribute : email, password, name, status)
+- Run the migration :
+  ```text
+  npx sequelize db:migrate
+  ```
+
 Config connection database :
+
+> File : `src/database/connection.js`
 
 ```javascript
 const Sequelize = require("sequelize");
