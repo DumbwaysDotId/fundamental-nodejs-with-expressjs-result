@@ -44,7 +44,7 @@
   const { ... , updateUser } = require("../controllers/user");
   ```
 
-  Router with method get for fetching user data :
+  Router with method update for fetching user data :
 
   ```javascript
   router.patch("/user/:id", updateUser);
